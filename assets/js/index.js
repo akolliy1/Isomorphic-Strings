@@ -9,17 +9,17 @@ submitBtn.addEventListener('click', function (event) {
     value1 = inputBox1.value;
     value2 = inputBox2.value;
     if (value1.length !== value2.length) {
-        h2.innerHTML = 'Input string of same length.'
-        output.appendChild(h2)
+        h2.innerHTML = 'Input string of same length.';
+        output.appendChild(h2);
     }
     else {
-        outputCheck = isIsomorphic(value1, value2)
+        outputCheck = isIsomorphic(value1, value2);
         if (outputCheck) {
-            h2.innerHTML = true
-            output.appendChild(h2)
+            h2.innerHTML = 'True';
+            output.appendChild(h2);
         } else {
-            h2.innerHTML = false
-            output.appendChild(h2)
+            h2.innerHTML = 'False';
+            output.appendChild(h2);
         }
     }
 
@@ -67,4 +67,3 @@ const isIsomorphic = (str1, str2) => {
     }
     return false
 }
-
