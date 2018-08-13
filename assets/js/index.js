@@ -1,39 +1,35 @@
-const submitBtn = document.querySelector('#submit')
-const inputBox1 = document.querySelector('#string1')
-const inputBox2 = document.querySelector('#string2')
-const output = document.querySelector('#output')
+const submitBtn = document.querySelector('#submit');
+const inputBox1 = document.querySelector('#string1');
+const inputBox2 = document.querySelector('#string2');
+const output = document.querySelector('#output');
+const h2 = document.createElement('h2');
 let value1, value2, outputCheck;
+
 submitBtn.addEventListener('click', function (event) {
     value1 = inputBox1.value;
     value2 = inputBox2.value;
     if (value1.length !== value2.length) {
-        document.querySelector('#output h2').remove();
-        const h2 = document.createElement('h2')
         h2.innerHTML = 'Input string of same length.'
         output.appendChild(h2)
     }
     else {
         outputCheck = isIsomorphic(value1, value2)
         if (outputCheck) {
-            document.querySelector('#output h2').remove();
-            const h2 = document.createElement('h2')
             h2.innerHTML = true
             output.appendChild(h2)
         } else {
-            document.querySelector('#output h2').remove();
-            const h2 = document.createElement('h2')
             h2.innerHTML = false
             output.appendChild(h2)
         }
     }
-    
+
 })
 
 
 const isIsomorphic = (str1, str2) => {
     const string1 = [];
     const string2 = [];
-    if ( !(str1 && str2)  ) {
+    if (!(str1 && str2)) {
         return false;
     }
     if (str1.length !== str2.length) {
@@ -55,7 +51,7 @@ const isIsomorphic = (str1, str2) => {
             mapIndexStr2.push(i);
             string2.push(str2[i]);
         }
-        
+
     }
     const index1 = mapIndexStr1.join('');
     const index2 = mapIndexStr2.join('');
